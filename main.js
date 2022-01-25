@@ -42,17 +42,36 @@ checkForPrimeNum.forEach(function (element) {
 });
 
 // MEDIUM (1)
+// const enterVowel = prompt('Enter a vowel');
+// function vowelChecker(x) {
+//     const vowels = ['a', 'e', 'i', 'o', 'u'];
+//     if (vowels.indexOf(x) < 0) {
+//         console.log('That is not a vowel')
+//     } else {
+//         console.log('That is a vowel')
+//     }
+//     // return enterVowel
+// }
+// vowelChecker(enterVowel);
+
 const enterVowel = prompt('Enter a vowel');
-function vowelChecker(x) {
-    // const vowels = ('a', 'e', 'i', 'o', 'u');
-    if (x === ) {
-        console.log('That is a vowel')
-    } else {
-        console.log('That is not a vowel')
+function vowelCheck(x) {
+    let isVowel = false;
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    if (vowels.indexOf(x) >= 0) {
+        isVowel = true;
     }
-    return vowlesChecker;
+    return isVowel;
 }
-console.log(vowlesChecker);
+
+if (vowelCheck(enterVowel)) {
+    console.log('That is a vowel');
+} else {
+    console.log('That is not a vowel');
+}
+
+// MEDIUM (2)
+
 
 // let arr = [1, 2, 3, 4, 5, 6, 7];
 
