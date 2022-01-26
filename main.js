@@ -43,6 +43,7 @@ checkForPrimeNum.forEach(function (element) {
 
 // MEDIUM (1)
 // const enterVowel = prompt('Enter a vowel');
+
 // function vowelChecker(x) {
 //     const vowels = ['a', 'e', 'i', 'o', 'u'];
 //     if (vowels.indexOf(x) < 0) {
@@ -55,6 +56,7 @@ checkForPrimeNum.forEach(function (element) {
 // vowelChecker(enterVowel);
 
 const enterVowel = prompt('Enter a vowel');
+
 function vowelCheck(x) {
     let isVowel = false;
     const vowels = ['a', 'e', 'i', 'o', 'u'];
@@ -71,17 +73,75 @@ if (vowelCheck(enterVowel)) {
 }
 
 // MEDIUM (2)
+function anagram(str1, str2) {
+    str1 = str1.toUpperCase().split('').sort().join('');
+    str2 = str2.toUpperCase().split('').sort().join('');
+    return str1 === str2;
+};
 
+console.log(anagram('debit card', 'bad credit'));
+console.log(anagram('anime', 'naruto'))
 
-// let arr = [1, 2, 3, 4, 5, 6, 7];
+// MEDIUM (3)
+function num(x, y) {
+    if ((typeof x !== 'number') || (typeof y !== 'number'))
+        return false;
+    x = Math.abs(x);
+    y = Math.abs(y);
+    while (y) {
+        var t = y;
+        y = x % y;
+        x = t;
+    }
+    return x;
+}
 
-// function findNumFive(arr) {
-//     let Num = 0
-//     for (i = 0; i < arr.length; i++) {
-//         if (arr[i] === 5) {
-//             Num = arr[i]
-//         }
-//     }
-//     return Num
+console.log(num(24, 12));
+console.log(num(8, 4));
+
+function filterList(x) {
+    return x.filter(x => typeof x === 'number');
+  }
+console.log(filterList([1, 'a', 'b', 13, 15, 0, 'c', 20]));
+
+// MEDIUM (4)
+// let car = {
+//     make: 'Toyota',
+//     model: 'Supra',
+//     year: 2022,
+//     mileage: 5000,
+//     color: 'red',
+
+//     driveToWork: () => {
+//         alert(`Old Mileage: ${car.mileage}`);
+//         console.log(car.mileage);
+//         car.mileage = car.mileage + 8
+
+//         alert(`New Mileage: ${car.mileage}`);
+//     },
+
+//     driveAroundTheWorld: () => {
+//         alert(`Old Mileage: ${car.mileage}`);
+
+//         car.mileage = car.mileage + 24000
+
+//         alert(`New Mileage: ${car.mileage}`);
+//         alert('Car needs a tune-up!')
+//     },
+
+//     runErrands: () => {
+//         alert('Car is ready to go!');
+//     },
 // }
-// console.log(findNumFive(arr));
+
+// HARD
+function matchingBrackets(x) {
+    let brackets = ['{}', '[]', '()']
+    if (x === brackets) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(matchingBrackets('{}'));
