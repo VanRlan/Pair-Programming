@@ -83,69 +83,62 @@ console.log(anagram('debit card', 'bad credit'));
 console.log(anagram('anime', 'naruto'))
 
 // MEDIUM (3)
-function num(x, y) {
-    if ((typeof x !== 'number') || (typeof y !== 'number'))
-        return false;
-    x = Math.abs(x);
-    y = Math.abs(y);
-    while (y) {
-        var t = y;
-        y = x % y;
-        x = t;
+function getgcd(x, y) {
+    var gcd = 0;
+    for (let i = 1; i <= x && i <= y; i++) {
+        // check if is factor of both integers
+        if (x % i == 0 && y % i == 0) {
+            gcd = i;
+        }
     }
-    return x;
+    return gcd
 }
+console.log("GCD " + getgcd(78, 126));
 
-console.log(num(24, 12));
-console.log(num(8, 4));
-
-function filterList(x) {
-    return x.filter(x => typeof x === 'number');
-  }
-console.log(filterList([1, 'a', 'b', 13, 15, 0, 'c', 20]));
+// function filterList(x) {
+//     return x.filter(x => typeof x === 'number');
+//   }
+// console.log(filterList([1, 'a', 'b', 13, 15, 0, 'c', 20]));
 
 // MEDIUM (4)
-// let car = {
-//     make: 'Toyota',
-//     model: 'Supra',
-//     year: 2022,
-//     mileage: 5000,
-//     color: 'red',
+let car = {
+    make: 'Bmw',
+    model: 'm3',
+    year: 2020,
+    mileage: 5000,
 
-//     driveToWork: () => {
-//         alert(`Old Mileage: ${car.mileage}`);
-//         console.log(car.mileage);
-//         car.mileage = car.mileage + 8
+    driveToWork: () => {
+        var carMilBegin = car.mileage;
+        car.mileage = car.mileage + 33;
+        console.log("old mileage: " + carMilBegin + " New mileage: " + car.mileage);
+    },
+    driveAroundTheWorld: () => {
+        var carMilBegin = car.mileage;
+        car.mileage = car.mileage + 24000;
+        console.log("old mileage: " + carMilBegin + " New mileage: " + car.mileage);
 
-//         alert(`New Mileage: ${car.mileage}`);
-//     },
+    },
+    runErrands: () => {
+        var carMilBegin = car.mileage;
+        car.mileage = car.mileage + 30;
+        console.log("old mileage: " + carMilBegin + " New mileage: " + car.mileage);
 
-//     driveAroundTheWorld: () => {
-//         alert(`Old Mileage: ${car.mileage}`);
-
-//         car.mileage = car.mileage + 24000
-
-//         alert(`New Mileage: ${car.mileage}`);
-//         alert('Car needs a tune-up!')
-//     },
-
-//     runErrands: () => {
-//         alert('Car is ready to go!');
-//     },
-// }
+    },
+}
+car.driveToWork();
+car.driveAroundTheWorld();
+car.runErrands();
 
 // HARD
-
-function brackets(str){
-    if(str === "{}" || str === "[]" || str === "()"){
+function brackets(str) {
+    if (str === "{}" || str === "[]" || str === "()") {
         return true;
-    }
-    else{
+    } else {
         return false;
     }
 
 }
-str = "[Hello World]";
-str = str.toLowerCase().replace(/[a-z]/g,"");
+str = "[Boom Shaka Laka]";
+str = str.toLowerCase().replace(/[a-z]/g, "");
 str = str.toLowerCase().replace(/\s+/g, '');
 console.log(brackets(str));
