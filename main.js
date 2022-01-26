@@ -136,8 +136,8 @@ function brackets(str) {
     } else {
         return false;
     }
-
 }
+
 str = "[Boom Shaka Laka]";
 str = str.toLowerCase().replace(/[a-z]/g, "");
 str = str.toLowerCase().replace(/\s+/g, '');
