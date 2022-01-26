@@ -135,13 +135,17 @@ console.log(filterList([1, 'a', 'b', 13, 15, 0, 'c', 20]));
 // }
 
 // HARD
-function matchingBrackets(x) {
-    let brackets = ['{}', '[]', '()']
-    if (x === brackets) {
+
+function brackets(str){
+    if(str === "{}" || str === "[]" || str === "()"){
         return true;
-    } else {
+    }
+    else{
         return false;
     }
-}
 
-console.log(matchingBrackets('{}'));
+}
+str = "[Hello World]";
+str = str.toLowerCase().replace(/[a-z]/g,"");
+str = str.toLowerCase().replace(/\s+/g, '');
+console.log(brackets(str));
